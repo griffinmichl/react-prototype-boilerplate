@@ -1,8 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Router, Route, Link, browserHistory } from 'react-router'
 
-function Hello() {
+function App() {
   return <div>Hello World!!!</div>
 }
 
-ReactDOM.render(<Hello/>, document.getElementById('app'))
+ReactDOM.render((
+  <Router history={browserHistory}>
+    <Route path="/" component={App} />
+  </Router>
+), document.getElementById('app'))
+
